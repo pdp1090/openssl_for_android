@@ -43,8 +43,8 @@ jobs:
       - name: Download OpenSSL
         id: download_openssl
         run: |
-          # aria2c -o openssl-${{env.OPENSSL_VERSION}}.tar.gz https://github.com/openssl/openssl/releases/download/openssl-${{env.OPENSSL_VERSION}}/openssl-${{env.OPENSSL_VERSION}}.tar.gz
-          aria2c -o openssl-${{env.OPENSSL_VERSION}}.tar.gz https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1i/openssl-1.1.1i.tar.gz
+          aria2c -o openssl-${{env.OPENSSL_VERSION}}.tar.gz https://github.com/openssl/openssl/releases/download/openssl-${{env.OPENSSL_VERSION}}/openssl-${{env.OPENSSL_VERSION}}.tar.gz
+          # aria2c -o openssl-${{env.OPENSSL_VERSION}}.tar.gz https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1i/openssl-1.1.1i.tar.gz
           tar -zxvf openssl-${{env.OPENSSL_VERSION}}.tar.gz
           echo "::set-output name=status::success"
 

@@ -19,8 +19,8 @@ jobs:
       matrix:
         info:
           - '{ "ANDROID_TARGET_ABI": "armeabi",  "ANDROID_TARGET_API": "21",  "ANDROID_NDK": "r16b"}'
-          - '{ "ANDROID_TARGET_ABI": "mips",     "ANDROID_TARGET_API": "21",  "ANDROID_NDK": "r16b"}'
-          - '{ "ANDROID_TARGET_ABI": "mips64",   "ANDROID_TARGET_API": "21",  "ANDROID_NDK": "r16b"}'
+          # - '{ "ANDROID_TARGET_ABI": "mips",     "ANDROID_TARGET_API": "21",  "ANDROID_NDK": "r16b"}'
+          # - '{ "ANDROID_TARGET_ABI": "mips64",   "ANDROID_TARGET_API": "21",  "ANDROID_NDK": "r16b"}'
     
     steps:
       - name: Checkout

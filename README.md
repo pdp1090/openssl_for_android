@@ -2,6 +2,7 @@
 Automatically compile static OpenSSL 1.1.1i library for Android by Github Actions.
 
 Added `-fPIC` to fix linking error.
+
 with `clang` compiler.
 
 ## Android

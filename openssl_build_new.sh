@@ -48,10 +48,10 @@ function build(){
 
     cd ${OPENSSL_PATH}
 
-    # export ANDROID_NDK_ROOT=${ANDROID_NDK_PATH}
-    # export PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
-    export ANDROID_NDK_HOME=${ANDROID_NDK_PATH}
-    export PATH=${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+    export ANDROID_NDK_ROOT=${ANDROID_NDK_PATH}
+    export PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+    # export ANDROID_NDK_HOME=${ANDROID_NDK_PATH}
+    # export PATH=${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
     export CXXFLAGS="-fPIC -Os"
     export CPPFLAGS="-DANDROID -fPIC -Os"
 

@@ -18,4 +18,4 @@ with `clang` compiler.
 | Date      | Content                                                              |
 |-----------|----------------------------------------------------------------------|
 | 2025.10.06 | Build 1.1.1i based on OpenSSL3.5.3 (NDK r21e) |
-| 2025.10.06 | Fork from 217heidai/openssl_for_android |
+| 2025.10.06 | Forked from 217heidai/openssl_for_android |

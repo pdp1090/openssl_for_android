@@ -48,19 +48,21 @@ function build(){
 
     cd ${OPENSSL_PATH}
 
-    export ANDROID_NDK_ROOT=${ANDROID_NDK_PATH}
-    export PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+    # export ANDROID_NDK_ROOT=${ANDROID_NDK_PATH}
+    # export PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+    export ANDROID_NDK_HOME=${ANDROID_NDK_PATH}
+    export PATH=${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${PLATFORM}-x86_64/bin:$PATH
     export CXXFLAGS="-fPIC -Os"
     export CPPFLAGS="-DANDROID -fPIC -Os"
 
     if   [ "${ANDROID_TARGET_ABI}" == "armeabi" ]; then
-        export PATH=${ANDROID_NDK_ROOT}/toolchains/arm-linux-androideabi-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+        export PATH=${ANDROID_NDK_HOME}/toolchains/arm-linux-androideabi-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
         ./Configure android-arm    -D__ANDROID_API__=${ANDROID_TARGET_API} -static ${OPENSSL_OPTIONS} --prefix=${OUTPUT_PATH}
     elif [ "${ANDROID_TARGET_ABI}" == "mips"   ]; then
-        export PATH=${ANDROID_NDK_ROOT}/toolchains/mipsel-linux-android-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+        export PATH=${ANDROID_NDK_HOME}/toolchains/mipsel-linux-android-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
         ./Configure android-mips   -D__ANDROID_API__=${ANDROID_TARGET_API} -static ${OPENSSL_OPTIONS} --prefix=${OUTPUT_PATH}
     elif [ "${ANDROID_TARGET_ABI}" == "mips64" ]; then
-        export PATH=${ANDROID_NDK_ROOT}/toolchains/mips64el-linux-android-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
+        export PATH=${ANDROID_NDK_HOME}/toolchains/mips64el-linux-android-4.9/prebuilt/${PLATFORM}-x86_64/bin:$PATH
         ./Configure android-mips64 -D__ANDROID_API__=${ANDROID_TARGET_API} -static ${OPENSSL_OPTIONS} --prefix=${OUTPUT_PATH}
     else
         echo "Unsupported target ABI: ${ANDROID_TARGET_ABI}"
